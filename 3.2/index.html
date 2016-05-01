@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-size: 24px;
+            }
+            
+            .one {
+                color: blue;
+                background-color: yellow;
+            }
+            
+            .two {
+                border: 2px solid black;
+            }
+        </style>
+    <body>
+        <p id="first">First Paragraph</p>
+        <p>Second Paragraph</p>     
+        <p>Third Paragraph</p>
+
+        <script 
+            src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous"></script>
+        
+        <script>
+            var first = $("#first");
+            var paragraphs = $("p");
+            
+            // first.css("color", "blue");
+            // first.css("backgroundColor", "yellow");
+            
+            // first.css({
+            //     color: "blue",
+            //     "background-color": "yellow"
+            // });
+            
+            // var color = paragraphs.css("color");
+            
+            // alert(color);
+            
+            first.addClass("one two");
+            first.removeClass("one");
+            first.toggleClass("one two");
+            
+            alert(first.hasClass("two"));
+            
+            
+        </script>
+    </body>
+</html>

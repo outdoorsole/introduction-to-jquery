@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <p data-attr="bar">Hello world</p>
+        <p class="foo">This was added</p>
+        
+        <script 
+            src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous"></script>
+        
+        <script>
+            var elements = $("[data-attr='bar']"); // jQuery object
+            
+            
+            elements.css("color", "blue");
+           
+            
+            //alert(elements.length);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+    <body>
+        <div id="content"></div>
+        
+        <script 
+            src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous"></script>
+        
+        <script>
+            // var content = $("#content");
+            
+            // content.load("external.html div");
+            
+            // var http = $.ajax({
+            //     method: "GET",
+            //     url: "data.json",
+            //     dataType: "json"
+            // });
+            
+            // var http = $.get({
+            //     url: "data.json",
+            //     dataType: "json"
+            // });
+            
+            var http = $.getJSON({
+                url: "data.json"
+            });
+            
+            http.done(function(obj) {
+                console.log(obj.firstName);
+            }).fail(function(obj) {
+                alert("something went wrong")
+            });
+        </script>
+    </body>
+</html>

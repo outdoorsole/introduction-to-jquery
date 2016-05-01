@@ -1,0 +1,40 @@
+<html>
+    <head>
+    <body>
+        <div id="hello-world">
+            <p>
+                <strong>hello <em>world</em></strong>
+            </p>
+            <p>
+                some other text
+            </p>
+        </div>
+        
+        <input type="text" id="text-box" value="some value" />
+        
+        <script 
+            src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous"></script>
+        
+        <script>
+            var el = $("#hello-world");
+            var textBox = $("#text-box");
+            
+            var htmlContent = el.html();
+            var textContent = el.text();
+            
+            //console.log(textContent);
+            
+            el.html("<p>some text</p>");
+            el.text("<p>some text</p>");
+            
+            var textBoxValue = textBox.val();
+            
+            console.log(textBoxValue);
+            
+            textBox.val("this is new value");
+            
+        </script>
+    </body>
+</html>

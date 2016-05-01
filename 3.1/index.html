@@ -1,0 +1,39 @@
+<html>
+    <head>
+    <body>
+        <p>Paragraph One</p>
+        <p>Paragraph Two</p>
+        <p>Paragraph Three</p>
+        
+        <script 
+            src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous"></script>
+        
+        <script>
+            // $("p").click(function(e) {
+            //     alert("the paragraph was clicked");
+            // });
+            
+            // $("p").on("click", function(e) {
+            //     alert("the paragraph was clicked");
+            // });
+            
+            $(document).on({
+                click: function(e) {
+                    $(e.target).append("you clicked the element");
+                },
+                mouseenter: function(e) {
+                    $(e.target).append("you entered the element");
+                }
+            }, "p");
+            
+            $(document).on("click", "p", function(e) {
+                alert("the paragraph was clicked");
+            });
+            
+        </script>
+        
+        <p>Paragraph Four</p>
+    </body>
+</html>

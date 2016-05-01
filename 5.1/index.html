@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+            body { font-size: 24px;}
+        </style>
+    </head>
+    <body>
+        <p>
+            <a href="#" data-acc-id="#description-2">Expand Item 2</a>
+        </p>
+        
+        <dl class="accordion">
+            <dt data-acc-id="#description-1">Item 1</dt>
+            <dd id="description-1">This is the description for Item 1.</dd>
+            
+            <dt data-acc-id="#description-2">Item 2</dt>
+            <dd id="description-2">This is the description for Item 2.</dd>
+            
+            <dt data-acc-id="#description-3">Item 3</dt>
+            <dd id="description-3">This is the description for Item 3.</dd>
+        </dl>
+        
+        <script 
+            src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous"></script>
+        
+        <script>
+            $("dl.accordion dd").hide();
+            
+            $(document).on("click", "[data-acc-id]", function(e) {
+                e.preventDefault();
+                var selector = $(e.target).attr("data-acc-id");
+                var $target = $(selector);
+                
+                var active = $target.attr("data-active");
+                
+                $("dl.accordion dd[data-active]")
+                    .removeAttr("data-active")
+                    .slideUp();
+                    
+                if (active) {
+                    return;
+                }
+                
+                $target
+                    .attr("data-active", true)
+                    .slideDown();
+            });
+        </script>
+    </body>
+</html>
