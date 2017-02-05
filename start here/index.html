@@ -21,6 +21,12 @@
             var textContent = el.text();
 
             console.log(textContent);
+
+            // set the html content
+            el.html("<p>some text</p>");
+
+            // only sets the text - the <> are encoded
+            el.text("<p>some text</p>")
         </script>
     </body>
 </html>
