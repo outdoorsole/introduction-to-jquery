@@ -12,21 +12,35 @@
             </p>
         </div>
 
+        <input type="text" id="text-box" value="some value" />
+
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
         <script>
             var el = $("#hello-world");
+            var textBox = $("#text-box");
 
             var htmlContent = el.html();
             var textContent = el.text();
 
-            console.log(textContent);
+            // console.log(textContent);
 
             // set the html content
             el.html("<p>some text</p>");
 
             // only sets the text - the <> are encoded
             el.text("<p>some text</p>")
+
+            // will store value of the form field
+            var textBoxValue = textBox.val();
+
+            console.log(textBoxValue);
+
+            textBox.val("this is new value");
+
+            // .html(), .text(), .val()
+            // gets content
+            // with argument, it will set the content
         </script>
     </body>
 </html>
