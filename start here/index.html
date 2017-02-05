@@ -3,18 +3,24 @@
     <head>
     </head>
     <body>
-        <p data-attr="bar">Hello World</p>
-        <p class="foo">This was added</p>
+        <div id="hello-world">
+            <p>
+                <strong>hello <em>world</em></strong>
+            </p>
+            <p>
+                some other text
+            </p>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
         <script>
-            var elements = $("[data-attr='bar']"); // jQuery object
-            var elements2 = document.querySelectorAll("[data-attr='bar']");
+            var el = $("#hello-world");
 
-            elements.css("color", "blue");
+            var htmlContent = el.html();
+            var textContent = el.text();
 
-            alert(elements.length);
+            console.log(textContent);
         </script>
     </body>
 </html>
